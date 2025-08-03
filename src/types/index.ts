@@ -35,18 +35,85 @@ export interface CompetitorFormData {
 }
 
 export interface Geography {
-  id: string;
-  name: string;
-  type: 'country' | 'region' | 'city';
-  selected: boolean;
+  id: number;
+  scale: 'Global' | 'Region' | 'Country' | 'State' | 'City';
+  hierarchy: GeographyHierarchy[];
+}
+
+export interface GeographyHierarchy {
+  level: 'Region' | 'Country' | 'State' | 'City';
+  value: string;
+}
+
+export interface GeographyFormData {
+  region: string;
+  country: string;
+  state: string;
+  city: string;
+  scale: 'Global' | 'Region' | 'Country' | 'State' | 'City';
+}
+
+export interface GeographyStats {
+  regions: number;
+  countries: number;
+  states: number;
+  cities: number;
 }
 
 export interface Persona {
-  id: string;
+  id: number;
   name: string;
   description: string;
   geography: string[];
   completeness: number;
+}
+
+export interface PersonaFormData {
+  name: string;
+  description: string;
+  geography: string[];
+}
+
+export interface GuidelineCoverage {
+  point: string;
+  covered: boolean;
+}
+
+export interface BrandData {
+  brandName: string;
+  website: string;
+  industry: string;
+  description: string;
+  longDescription: string;
+  keyFeatures: string[];
+}
+
+export interface AnalyticsFilter {
+  timeRange: string;
+  model: string;
+  persona: string;
+  geography: string;
+  intent: string;
+}
+
+export interface MentionData {
+  intent: string;
+  mentions: number;
+  trend: string;
+  id: string;
+}
+
+export interface GeographyMentionData {
+  region: string;
+  mentions: number;
+  trend: string;
+  id: string;
+}
+
+export interface SourceData {
+  source: string;
+  mentions: number;
+  percentage: number;
 }
 
 export interface FilterState {

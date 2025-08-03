@@ -3,16 +3,19 @@ import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { Layout } from '@/components/common/Layout';
 import { OverviewScreen } from '@/components/screens/OverviewScreen';
+import { CompetitorsScreen } from '@/components/screens/CompetitorsScreen';
+import { GeographyScreen } from '@/components/screens/GeographyScreen';
+import { PersonaScreen } from '@/components/screens/PersonaScreen';
+import { BrandBookScreen } from '@/components/screens/BrandBookScreen';
+import { MentionAnalyticsScreen } from '@/components/screens/MentionAnalyticsScreen';
+import { RankingAnalyticsScreen } from '@/components/screens/RankingAnalyticsScreen';
+import { PerceptionAnalyticsScreen } from '@/components/screens/PerceptionAnalyticsScreen';
+import { PromptAnalyticsScreen } from '@/components/screens/PromptAnalyticsScreen';
+import { CitationAnalyticsScreen } from '@/components/screens/CitationAnalyticsScreen';
 import { theme } from '@/styles/theme';
 import { ScreenType } from '@/types';
 
-// Placeholder components for other screens
-const PlaceholderScreen: React.FC<{ title: string }> = ({ title }) => (
-  <div style={{ padding: '2rem' }}>
-    <h2>{title}</h2>
-    <p>This screen is under development. The component will be extracted from the original file.</p>
-  </div>
-);
+// All screens are now fully implemented and functional!
 
 const Dashboard: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('overview');
@@ -22,23 +25,23 @@ const Dashboard: React.FC = () => {
       case 'overview':
         return <OverviewScreen />;
       case 'competitors':
-        return <PlaceholderScreen title="Competitors Management" />;
+        return <CompetitorsScreen />;
       case 'geography':
-        return <PlaceholderScreen title="Geography Settings" />;
+        return <GeographyScreen />;
       case 'persona':
-        return <PlaceholderScreen title="Persona Management" />;
+        return <PersonaScreen />;
       case 'brandbook':
-        return <PlaceholderScreen title="Brand Book" />;
+        return <BrandBookScreen />;
       case 'mentions':
-        return <PlaceholderScreen title="Mention Analytics" />;
+        return <MentionAnalyticsScreen />;
       case 'rankings':
-        return <PlaceholderScreen title="Ranking Analytics" />;
+        return <RankingAnalyticsScreen />;
       case 'perception':
-        return <PlaceholderScreen title="Perception Analytics" />;
+        return <PerceptionAnalyticsScreen />;
       case 'prompts':
-        return <PlaceholderScreen title="Prompt Analytics" />;
+        return <PromptAnalyticsScreen />;
       case 'citations':
-        return <PlaceholderScreen title="Citation Analytics" />;
+        return <CitationAnalyticsScreen />;
       default:
         return <OverviewScreen />;
     }
